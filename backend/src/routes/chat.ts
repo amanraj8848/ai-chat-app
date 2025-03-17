@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
         messages: [{ role: 'user', content: message }],
         model: 'llama3-8b-8192', // Replace with your desired model
       });
-  
+      console.log(groqResponse.choices[0].message.content)
       res.json({  groq_response: groqResponse.choices[0].message.content });
     } catch (error) {
       console.error(error);
